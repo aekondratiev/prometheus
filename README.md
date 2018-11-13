@@ -40,7 +40,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-# Way to get the chat ID (ID permanent for all bots)
+# way to get the chat ID (ID permanent for all bots)
 * Add bot on channel
 * Send any message on this channel
 * Access access the link https://api.telegram.org/botXXX:YYYY/getUpdates (xxx:yyyy botID)
