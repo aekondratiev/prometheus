@@ -103,7 +103,7 @@ groups:
         labels:
           severity: warning
         annotations:
-          description: 'Disk space is likely to will fill on volume
+          description: 'Disk space is likely to fill on volume
             {{ $labels.mountpoint }} within the next 24 hours for hostname: {{ $labels.instance }}, GB free: {{ $value | printf "%.1f" }}'
           summary: 'Disk will be full soon, GB free: {{ $value | printf "%.1f" }}'
 
@@ -168,7 +168,7 @@ inhibit_rules:
    'externalURL':'http://prometheus.fqdn:9093',
    'commonAnnotations':{
       'summary':'Predictive Disk Space Utilisation Alert',
-      'description':'Based on recent sampling, the disk is likely to will fill on volume / within the next 24 hours for instace:  tagged as: '
+      'description':'Based on recent sampling, the disk is likely to fill on volume / within the next 24 hours for instace:  tagged as: '
    },
    'receiver':'telegram-webhook',
    'commonLabels':{
