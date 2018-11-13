@@ -148,3 +148,50 @@ inhibit_rules:
       severity: 'warning'
     equal: ['alertname', 'dev', 'instance']
 ```
+# example json from alertmanager
+```
+{
+   'status':'firing',
+   'groupLabels':{
+      'alertname':'PreditciveHostDiskSpace'
+   },
+   'externalURL':'http://prometheus.fqdn:9093',
+   'commonAnnotations':{
+      'summary':'Predictive Disk Space Utilisation Alert',
+      'description':'Based on recent sampling, the disk is likely to will fill on volume / within the next 24 hours for instace:  tagged as: '
+   },
+   'receiver':'telegram-webhook',
+   'commonLabels':{
+      'fstype':'ext4',
+      'device':'/dev/loop1',
+      'severity':'warning',
+      'alertname':'PreditciveHostDiskSpace',
+      'mountpoint':'/',
+      'instance':'host1.fqdn:9100',
+      'job':'node'
+   },
+   'groupKey':'{}:{alertname="PreditciveHostDiskSpace"}',
+   'alerts':[
+      {
+         'status':'firing',
+         'labels':{
+            'fstype':'ext4',
+            'device':'/dev/loop1',
+            'severity':'warning',
+            'alertname':'PreditciveHostDiskSpace',
+            'mountpoint':'/',
+            'instance':'host1.fqdn:9100',
+            'job':'node'
+         },
+         'generatorURL':'http://prometheus.fqdn:9090/graph?g0.expr=predict_linear%28node_filesystem_free_bytes%7Bdevice%21~%22tmpfs%22%2Cfstype%3D%22ext4%22%2Cinstance%21%3D%22backup.lxc.local%3A9100%22%7D%5B4h%5D%2C+24+%2A+3600%29+%3C+3e%2B10&g0.tab=1',
+         'annotations':{
+            'summary':'Predictive Disk Space Utilisation Alert',
+            'description':'Based on recent sampling, the disk is likely to will fill on volume / within the next 24 hours for instace:  tagged as: '
+         },
+         'endsAt':'2018-11-12T21:41:48.509579153Z',
+         'startsAt':'2018-11-12T21:38:48.509579153Z'
+      }
+   ],
+   'version':'4'
+}
+```
