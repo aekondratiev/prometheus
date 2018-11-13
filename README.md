@@ -1,6 +1,16 @@
 # prometheus telegram alert service with proxy
 prometheus telegram alert service with proxy support + some other staff
 
+table of contents
+=================
+
+   * [install](#install)
+   * [alertmanager configuration example](#alertmanager-configuration-example)
+   * [systemd service](#systemd-service)
+   * [way to get the chat ID (ID permanent for all bots)](#way-to-get-the-chat-id-id-permanent-for-all-bots)
+   * [prometheus some configs](#prometheus-some-configs)
+   * [example json from alertmanager](#example-json-from-alertmanager)
+
 # install
 ```
 pip install -r requirements.txt
