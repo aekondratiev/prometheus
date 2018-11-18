@@ -38,14 +38,14 @@ Change on prometheus_py_bot.py
 Description=Tornado
 
 [Service]
-ExecStart=/usr/bin/python3 /usr/local/bin/prometheus_py_bot.py
-
+ExecStart=/usr/bin/python3 /usr/local/bin/prometheus_py_bot
 WorkingDirectory=/tmp
-
-User=root
-Group=root
-
+User=nobody
+Group=nobody
 Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=tornado
 
 [Install]
 WantedBy=multi-user.target
