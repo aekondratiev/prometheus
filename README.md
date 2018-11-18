@@ -52,7 +52,7 @@ WantedBy=multi-user.target
 ```
 # way to get the chat ID (ID permanent for all bots)
 * Add bot on channel
-* Send any message on this channel
+* Send any message on this channel to @yourbot
 * Access access the link https://api.telegram.org/botXXX:YYYY/getUpdates (xxx:yyyy botID)
 
 # prometheus some configs
