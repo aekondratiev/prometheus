@@ -30,7 +30,7 @@ class AlertHandler(tornado.web.RequestHandler):
 			#print(content)
 			try:
 				for alert in content['alerts']:
-					message = "Hostname: <b>{}</b>\nStatus: <b>{}</b>\nAlertname: <b>{}</b>\n\n<b>{}</b>\n".format(alert['labels']['instance'], alert['status'], alert['labels']['alertname'], alert['annotations']['description'])
+					message = "Hostname: <b>{}</b>\nStatus: <b>{}</b>\nAlertname: <b>{}</b>\n\n<b>{}</b>\n".format(alert['labels']['instance'], alert['status'], alert['labels']['alertname'], alert['annotations']['summary'])
 					#print("Message: ", message)
 					data = {'disable_web_page_preview': 1, 'chat_id': chat_id, 'text': message, 'parse_mode': 'HTML'}
 					try:
